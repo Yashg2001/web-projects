@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multi Step Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+	<form id="form1">
+		<h3>PERSONAL DETAILS</h3>
+		<input type="text" placeholder="First Name" name="">
+		<input type="text" placeholder="Last Name" name="">
+		<input type="text" placeholder="Mobile Number" name="">
+
+		<div class="btn-box">
+			<button type="button" id="next1">Next</button>
+		</div>
+	</form>
+
+	<form id="form2">
+		<h3>SOCIAL LINKS</h3>
+		<input type="text" placeholder="Linkedin" name="">
+		<input type="text" placeholder="Instagram" name="">
+		<input type="text" placeholder="Github" name="">
+
+		<div class="btn-box">
+			<button type="button" id="back1">Back</button>
+			<button type="button" id="next2">Next</button>
+		</div>
+	</form>
+
+	<form id="form3">
+		<h3>CREATE AN ACCOUNT</h3>
+		<input type="text" placeholder="EmailID" name="">
+		<input type="password" placeholder="Password" name="">
+		<input type="password" placeholder="ConPass" name="">
+
+		<div class="btn-box">
+			<button type="button" id="back2">Back</button>
+			<button type="submit">Submit</button>
+		</div>
+	</form>
+
+	<div class="step-row">
+		<div id="progress"></div>
+		<div class="step-col"><small>Step 1</small></div>
+		<div class="step-col"><small>Step 2</small></div>
+		<div class="step-col"><small>Step 3</small></div>
+	</div>
+</div>
+<script>
+	var form1 = document.getElementById('form1');
+	var form2 = document.getElementById('form2');
+	var form3 = document.getElementById('form3');
+
+	var next1 = document.getElementById('next1');
+	var next2 = document.getElementById('next2');
+
+	var back1 = document.getElementById('back1');
+	var back2 = document.getElementById('back2');
+
+	var progress = document.getElementById('progress');
+
+	next1.onclick = function()
+	{
+		form1.style.left = "-400px";
+		form2.style.left = "40px";
+		progress.style.width = "238px";
+	}
+
+	back1.onclick = function()
+	{
+		form1.style.left = "40px";
+		form2.style.left = "450px";
+		progress.style.width = "119px";
+	}
+
+	next2.onclick = function()
+	{
+		form2.style.left = "-400px";
+		form3.style.left = "40px";
+		progress.style.width = "357px";
+	}
+
+	back2.onclick = function()
+	{
+		form2.style.left = "40px";
+		form3.style.left = "450px";
+		progress.style.width = "238px";
+	}
+
+
+</script>
+</body>
+</html>

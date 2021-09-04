@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Glassmorphism css effects</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+	</div>
+	<form method="POST" name="google-sheet">
+		<h3>
+			Welcome Back
+			<span>Login to account</span>
+		</h3>
+		<label for="name">Username</label>
+		<input type="text" placeholder="Enter username" id="name" name="Name">
+
+		<label for="password">Password</label>
+		<input type="password" placeholder="********" id="password" name="Password">
+
+		<div><button>LogIN</button></div>
+		<input type="submit" value="Submit" name="Submit">
+	</form>
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwhPNkcWeoCdQn2uTN3iwtMi8YYcOBMuNpWU1bY3XWv4XI1du_aerT1B8nxXy-H10I/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Smiley Face Animation</title>
+	<link rel="stylesheet" type="text/css">
+	<style>
+	*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: black;
+}
+.face
+{
+	background-color: #ffcd00;
+	position: relative;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.face::before
+{
+	content: '';
+	background: #b57700;
+	height: 70px;
+	width: 150px;
+	position: absolute;
+	top: 180px;
+	border-bottom-right-radius: 70px;
+	border-bottom-left-radius: 70px;
+	transition: 0.5s;
+}
+.face:hover::before
+{
+	top: 210px;
+	background: #b57700;
+	height: 20px;
+	width: 140px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.eyes
+{
+	position: relative;
+	top: -40px;
+	display: flex;
+}
+.eyes .eye
+{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	position: relative;
+	border-radius: 50%;
+	margin: 0 14px;
+}
+.eyes .eye::before
+{
+	content: '';
+	background: black;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	border-radius: 50%;
+	left: 24px;
+	transform: translate(-50%,-50%);
+}</style>
+</head>
+<body>
+	<div class="face">
+		<div class="eyes">
+			<div class="eye"></div>
+			<div class="eye"></div>
+		</div>
+	</div>
+<script>
+	document.querySelector("body").addEventListener("mousemove",eyeball);
+	function eyeball() 
+	{
+		var eye=document.querySelectorAll(".eye");
+		eye.forEach(
+		function(eye)
+		{
+			let x=eye.getBoundingClientRect().left+eye.clientWidth/2;
+		    let y=eye.getBoundingClientRect().top+eye.clientHeight/2;
+		    let radian=Math.atan2(event.pageX -x,event.pageY -y);
+		    let rot=radian*(180/Math.PI)* -1+270;
+		    eye.style.transform="rotate("+rot+"deg)";
+	    });
+	}
+</script>
+</body>
+
+</html>

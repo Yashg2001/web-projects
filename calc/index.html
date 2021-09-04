@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SImple Calculator by Yash</title>
+	<style>
+		input
+		{
+			width: 80px;
+			height: 35px;
+			text-align: center;
+			border-radius: 20px;
+		}
+		table
+		{
+			background-color: orange;
+			border-radius: 10px;
+		}
+		.keypad
+		{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: black;
+			color: white;
+			font-size: 25px;
+		}
+		input::placeholder
+		{
+			text-align: center;
+		}
+		
+	</style>
+</head>
+<body>
+<h1 align="center">Simple Calculator Using Javascript</h1>
+<table border="0" align="center" cellspacing="10">
+	<tr>
+		<td><input type="text" id="one" placeholder="Number 1" style="width: 110px; font-size: 15px"></td>
+		<td><input type="text" id="two" placeholder="Number 2" style="width: 110px; font-size: 15px"></td>
+		<td><input type="text" id="ans" placeholder="Result" style="width: 110px; font-size: 15px"></td>
+	</tr>
+	<br>
+	<tr>
+		<th><input type="submit" value="1" id="1" onclick="onee()" class="keypad"></th>
+		<th><input type="submit" value="2" id="2" onclick="twoo()" class="keypad"></th>
+		<th><input type="submit" value="3" id="3" class="keypad"></th>
+	</tr>
+	<tr>
+		<th><input type="submit" value="4" id="4" class="keypad"></th>
+		<th><input type="submit" value="5" id="5" class="keypad"></th>
+		<th><input type="submit" value="6" id="6" class="keypad"></th>
+	</tr>
+	<tr>
+		<th><input type="submit" value="7" id="7" class="keypad"></th>
+		<th><input type="submit" value="8" id="8" class="keypad"></th>
+		<th><input type="submit" value="9" id="9" class="keypad"></th>
+	</tr>
+	<tr>
+		<td align=" center"><input type="submit" value="+" id="+" onclick="sum()" style="font-size: 25px;"></td>
+		<td align=" center"><input type="submit" value="-" id="-" onclick="diff()" style="font-size: 25px;"></td>
+		<td align=" center"><input type="submit" value="*" id="*" onclick="mul()" style="font-size: 25px;"></td>
+	</tr>
+	<tr>
+		<td align=" center"><input type="submit" value="/" id="/" onclick="div()" style="font-size: 25px;"></td>
+		<td align=" center"><input type="submit" value="mod(%)" id="%" onclick="mod()" style="font-size: 18px;"></td>
+		<td align=" center"><input type="submit" value="Off" id="off" onclick="off()" style="font-size: 21px; font-weight: bold; background-color: red; color: white"></td>
+	</tr>
+	<tr>
+		<td colspan="3" align="center"><input type="submit" value="On" id="on" onclick="on()" style="font-size: 25px; font-weight: bold; background-color: green; color: white; width: 100px"></td>
+	</tr>
+</table>
+<script>
+	function off()
+	{
+       document.getElementById('one').disabled=true;
+       document.getElementById('two').disabled=true;
+       document.getElementById('ans').disabled=true;
+       document.getElementById('1').disabled=true;
+       document.getElementById('2').disabled=true;
+       document.getElementById('3').disabled=true;
+       document.getElementById('4').disabled=true;
+       document.getElementById('5').disabled=true;
+       document.getElementById('6').disabled=true;
+       document.getElementById('7').disabled=true;
+       document.getElementById('8').disabled=true;
+       document.getElementById('9').disabled=true;
+       document.getElementById('+').disabled=true;
+       document.getElementById('-').disabled=true;
+       document.getElementById('*').disabled=true;
+       document.getElementById('/').disabled=true;
+       document.getElementById('%').disabled=true;
+       document.getElementById('off').disabled=true;
+
+	}
+function on()
+{
+	document.getElementById('one').disabled=false;
+       document.getElementById('two').disabled=false;
+       document.getElementById('ans').disabled=false;
+       document.getElementById('1').disabled=false;
+       document.getElementById('2').disabled=false;
+       document.getElementById('3').disabled=false;
+       document.getElementById('4').disabled=false;
+       document.getElementById('5').disabled=false;
+       document.getElementById('6').disabled=false;
+       document.getElementById('7').disabled=false;
+       document.getElementById('8').disabled=false;
+       document.getElementById('9').disabled=false;
+       document.getElementById('+').disabled=false;
+       document.getElementById('-').disabled=false;
+       document.getElementById('*').disabled=false;
+       document.getElementById('/').disabled=false;
+       document.getElementById('%').disabled=false;
+       document.getElementById('off').disabled=false;
+}
+function onee()
+{
+	document.getElementById('one').value=1;
+
+}
+function twoo()
+{
+	document.getElementById('one').value=2;
+}
+function sum()
+{
+	var a=parseInt(document.getElementById('one').value);
+	var b=parseInt(document.getElementById('two').value);
+	var c=a+b;
+	parseInt(document.getElementById('ans').value=c);
+}
+function diff()
+{
+	var a=parseInt(document.getElementById('one').value);
+	var b=parseInt(document.getElementById('two').value);
+	var c=a-b;
+	parseInt(document.getElementById('ans').value=c);
+}
+function mul()
+{
+	var a=parseInt(document.getElementById('one').value);
+	var b=parseInt(document.getElementById('two').value);
+	var c=a*b;
+	parseInt(document.getElementById('ans').value=c);
+}
+function div()
+{
+	var a=parseInt(document.getElementById('one').value);
+	var b=parseInt(document.getElementById('two').value);
+	var c=a/b;
+	parseInt(document.getElementById('ans').value=c);
+}
+function mod()
+{
+	var a=parseInt(document.getElementById('one').value);
+	var b=parseInt(document.getElementById('two').value);
+	var c=a%b;
+	parseInt(document.getElementById('ans').value=c);
+}
+</script>
+</body>
+</html>

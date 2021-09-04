@@ -1,0 +1,1 @@
+document.getElementById("sunday").innerHTML="Today is Sunday and i am yash";
